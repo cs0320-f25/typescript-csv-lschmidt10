@@ -1,5 +1,5 @@
-name,job title
-Mike,Analyst
-Joe,Manager
-Timmy, Accountant 
- Fred,Employee   
+name,job title,years worked
+Mike,Analyst,5
+Joe,,5
+Timmy, Accountant ,10
+ Fred,Employee   ,12 

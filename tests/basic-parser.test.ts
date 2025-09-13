@@ -16,14 +16,14 @@ test("parseCSV yields arrays", async () => {
   expect(results[4]).toEqual(["Nim", "22"]);
 });
 
-test("commas inside fields", async () => {
+test("commas inside fields and double quotes", async () => {
   const results = await parseCSV(QUOTES_CSV_PATH);
   
   expect(results).toHaveLength(4);
   expect(results[0]).toEqual(["quote", "name"]);
   expect(results[1]).toEqual(["Hello World", "John"]);
   expect(results[2]).toEqual(["One, Two, Three", "Tom"]);
-  expect(results[3]).toEqual([",Strange Quote", "Bob"]);
+  expect(results[3]).toEqual([',Very "Strange" Quote', "Bob"]);
 });
 
 test("remove headers", async () => {
@@ -37,15 +37,15 @@ test("remove headers", async () => {
   expect(results[3]).toEqual(["Nim", "22"]);
 });
 
-test("trim whitespace", async () => {
+test("trim whitespace and empty columns", async () => {
   const results = await parseCSV(JOBS_CSV_PATH);
 
   expect(results).toHaveLength(5);
-  expect(results[0]).toEqual(["name", "job title"]);
-  expect(results[1]).toEqual(["Mike", "Analyst"]);
-  expect(results[2]).toEqual(["Joe", "Manager"]);
-  expect(results[3]).toEqual(["Timmy", "Accountant"]);
-  expect(results[4]).toEqual(["Fred", "Employee"]);
+  expect(results[0]).toEqual(["name", "job title", "years worked"]);
+  expect(results[1]).toEqual(["Mike", "Analyst", "5"]);
+  expect(results[2]).toEqual(["Joe", "", "5"]);
+  expect(results[3]).toEqual(["Timmy", "Accountant", "10"]);
+  expect(results[4]).toEqual(["Fred", "Employee", "12"]);
 });
 
 test("parseCSV yields only arrays", async () => {

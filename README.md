@@ -12,6 +12,10 @@
 
     Include your notes from above: what were your initial ideas, what did the LLM suggest, and how did the results differ by prompt? What resonated with you, and what didn’t? (3-5 sentences.) 
 
+    Functionality (From me): As a user of the parser, I cannot  
+
+
+
 ### Design Choices
 
 ### 1340 Supplement
