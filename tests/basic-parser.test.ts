@@ -49,7 +49,7 @@ test("trim whitespace and empty columns", async () => {
 });
 
 test("parseCSV yields only arrays", async () => {
-  const results = await parseCSV(PEOPLE_CSV_PATH)
+  const results = await parseCSV(PEOPLE_CSV_PATH);
   for(const row of results) {
     expect(Array.isArray(row)).toBe(true);
   }
